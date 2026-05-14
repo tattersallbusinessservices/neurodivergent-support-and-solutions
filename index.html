@@ -80,6 +80,47 @@ Error generating stack: `+l.message+`
       defer
       src="%VITE_ANALYTICS_ENDPOINT%/umami"
       data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+
+    <script>
+      (function () {
+        var FORMSPREE_ENDPOINT = 'https://formspree.io/f/meenbgzb';
+
+        function attachFormspree(form) {
+          if (form.__formspreeAttached) return;
+          form.__formspreeAttached = true;
+
+          form.addEventListener('submit', function (e) {
+            var data = {
+              name: (form.querySelector('[name="name"]') || {}).value || '',
+              email: (form.querySelector('[name="email"]') || {}).value || '',
+              phone: (form.querySelector('[name="phone"]') || {}).value || '',
+              service: (form.querySelector('[name="service"]') || {}).value || '',
+              message: (form.querySelector('[name="message"]') || {}).value || ''
+            };
+
+            fetch(FORMSPREE_ENDPOINT, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+              body: JSON.stringify(data)
+            }).catch(function (err) {
+              console.warn('Formspree submission error:', err);
+            });
+          }, true);
+        }
+
+        function scanForms() {
+          var forms = document.querySelectorAll('form');
+          forms.forEach(attachFormspree);
+        }
+
+        var observer = new MutationObserver(function () {
+          scanForms();
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+        scanForms();
+      })();
+    </script>
   </body>
 
 </html>
