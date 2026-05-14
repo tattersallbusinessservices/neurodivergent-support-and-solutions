@@ -27,7 +27,12 @@ jobs:
 
       - name: Setup pnpm
         run: corepack prepare pnpm@10.5.2 --activate
-
+        
+      - name: Debug folder
+        run: |
+          pwd
+          ls -la
+      
       - name: Install dependencies
         run: pnpm install
 
