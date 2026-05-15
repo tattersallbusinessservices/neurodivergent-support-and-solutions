@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms &amp; Conditions — Neurodivergent Support and Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: oklch(64% .108 172.5);
+      --primary-dark: oklch(52% .108 172.5);
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+    .logo-wrap img { height: 48px; width: auto; }
+    .logo-wrap span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.3;
+      max-width: 180px;
+    }
+    nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--primary);
+      text-decoration: none;
+      border: 1.5px solid var(--primary);
+      border-radius: 6px;
+      padding: 0.4rem 1rem;
+      transition: background 0.15s, color 0.15s;
+    }
+    nav a:hover { background: var(--primary); color: #fff; }
+
+    /* ── Hero band ── */
+    .hero {
+      background: linear-gradient(135deg, oklch(97% .02 172.5), oklch(96% .03 200));
+      padding: 3.5rem 1.5rem 3rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    .last-updated {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.25rem 0.85rem;
+    }
+
+    /* ── Content ── */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    /* Table of contents */
+    .toc {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3rem;
+    }
+    .toc h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    .toc ol {
+      padding-left: 1.25rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+    .toc a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .toc a:hover { text-decoration: underline; }
+
+    /* Sections */
+    section { margin-bottom: 2.75rem; scroll-margin-top: 90px; }
+
+    h2.section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 1.1rem;
+    }
+    h2.section-title span {
+      color: var(--primary);
+      margin-right: 0.4rem;
+    }
+
+    p { margin-bottom: 0.9rem; color: #334155; }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      padding-left: 1.4rem;
+      margin-bottom: 0.9rem;
+      color: #334155;
+    }
+    li { margin-bottom: 0.35rem; }
+
+    .highlight-box {
+      background: oklch(97% .02 172.5);
+      border: 1px solid oklch(88% .05 172.5);
+      border-radius: 8px;
+      padding: 1.1rem 1.4rem;
+      margin: 1.1rem 0;
+      font-size: 0.95rem;
+    }
+    .highlight-box strong { color: var(--primary-dark); }
+
+    a { color: var(--primary); }
+    a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      background: #1e293b;
+      color: #94a3b8;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+    footer a { color: #cbd5e1; }
+    footer strong { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a class="logo-wrap" href="/">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663463097640/FZUAD8TqmYhAPceK54K6Dx/logo_c442d514.png" alt="Neurodivergent Support and Solutions logo" />
+        <span>Neurodivergent Support and Solutions</span>
+      </a>
+      <nav>
+        <a href="/">← Back to site</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1>Terms &amp; Conditions</h1>
+    <p>Please read these terms carefully before using our services or website.</p>
+    <span class="last-updated">Last updated: May 2025</span>
+  </div>
+
+  <main>
+
+    <div class="toc">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#about">About us and these terms</a></li>
+        <li><a href="#services">Our services</a></li>
+        <li><a href="#professional-relationship">Professional relationship</a></li>
+        <li><a href="#appointments">Appointments and cancellations</a></li>
+        <li><a href="#payment">Payment and fees</a></li>
+        <li><a href="#confidentiality">Confidentiality</a></li>
+        <li><a href="#liability">Liability and disclaimers</a></li>
+        <li><a href="#website">Website use</a></li>
+        <li><a href="#intellectual-property">Intellectual property</a></li>
+        <li><a href="#governing-law">Governing law</a></li>
+        <li><a href="#changes">Changes to these terms</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ol>
+    </div>
+
+    <section id="about">
+      <h2 class="section-title"><span>1.</span>About us and these terms</h2>
+      <p>These Terms and Conditions govern your use of the Neurodivergent Support and Solutions website and the services we provide. By accessing our website or engaging our services, you agree to be bound by these terms.</p>
+      <p>Neurodivergent Support and Solutions is a UK-based practice founded and operated by a doctor with lived experience of autism and ADHD. We provide coaching, advocacy, workplace support, assessments, and related services for neurodivergent individuals and organisations.</p>
+      <p>If you do not agree with any part of these terms, please do not use our website or services. For any questions, contact us at <a href="mailto:hello@neurodivergentsupportandsolutions.com">hello@neurodivergentsupportandsolutions.com</a>.</p>
+    </section>
+
+    <section id="services">
+      <h2 class="section-title"><span>2.</span>Our services</h2>
+      <p>We offer a range of services including but not limited to:</p>
+      <ul>
+        <li>One-to-one coaching and support for neurodivergent individuals</li>
+        <li>Advocacy and report writing</li>
+        <li>Access to Work support and guidance</li>
+        <li>Workplace neurodiversity consultancy for employers</li>
+        <li>Neurodivergent assessments (where applicable)</li>
+        <li>AI-powered and self-guided support tools</li>
+      </ul>
+      <p>The specific scope, format, duration, and fees for each service will be agreed with you individually before any work commences. Nothing on this website constitutes a binding offer of services; a service agreement only exists once we have confirmed it in writing.</p>
+      <div class="highlight-box">
+        <strong>Important:</strong> Our services are supportive and coaching-based in nature. We do not provide medical diagnosis, medical treatment, or clinical psychological therapy. If you require clinical or emergency mental health support, please contact your GP, NHS services, or call 999 in an emergency.
+      </div>
+    </section>
+
+    <section id="professional-relationship">
+      <h2 class="section-title"><span>3.</span>Professional relationship</h2>
+      <p>Our services are provided in a supportive, coaching, and consultancy capacity. While our founder is a qualified doctor, our services are not provided as medical services and do not constitute a doctor-patient relationship unless this is explicitly agreed in a separate clinical agreement.</p>
+      <p>You are responsible for making your own decisions based on any information, guidance, or strategies we share with you. We will always act in your best interests, but we cannot guarantee specific outcomes from our services.</p>
+      <p>We work collaboratively with you and ask that you engage openly and honestly to help us support you as effectively as possible.</p>
+    </section>
+
+    <section id="appointments">
+      <h2 class="section-title"><span>4.</span>Appointments and cancellations</h2>
+      <p>We understand that life can be unpredictable, and we will always try to be as flexible and accommodating as possible. The following applies to scheduled sessions:</p>
+      <ul>
+        <li><strong>Cancellations with more than 48 hours' notice</strong> — no charge; we will rearrange at a mutually convenient time.</li>
+        <li><strong>Cancellations with less than 48 hours' notice</strong> — we reserve the right to charge up to 50% of the session fee, at our discretion and with regard to your circumstances.</li>
+        <li><strong>Non-attendance without notice</strong> — the full session fee may be charged.</li>
+      </ul>
+      <p>We will always notify you as early as possible if we need to cancel or reschedule a session, and will not charge you in such circumstances.</p>
+      <p>We recognise that neurodivergent individuals may sometimes find it difficult to communicate in advance of a cancellation. Please do reach out to us as soon as you are able — we will always try to work with you compassionately.</p>
+    </section>
+
+    <section id="payment">
+      <h2 class="section-title"><span>5.</span>Payment and fees</h2>
+      <p>Fees for our services are agreed individually and communicated to you in advance. We aim to be transparent and fair in our pricing.</p>
+      <ul>
+        <li>Invoices are payable within the timeframe stated on the invoice (typically 14 days).</li>
+        <li>We accept payment by bank transfer and other methods as agreed.</li>
+        <li>If you are experiencing financial difficulty, please speak to us — we will always try to find a workable arrangement where possible.</li>
+        <li>We reserve the right to pause or suspend services where invoices remain unpaid beyond 30 days without prior agreement.</li>
+      </ul>
+      <p>All fees are in pounds sterling (GBP) and, where applicable, include VAT at the current UK rate.</p>
+    </section>
+
+    <section id="confidentiality">
+      <h2 class="section-title"><span>6.</span>Confidentiality</h2>
+      <p>We take confidentiality very seriously. All information you share with us is treated in strict confidence and will not be disclosed to any third party without your explicit consent, except in the following circumstances:</p>
+      <ul>
+        <li>Where we are legally required to disclose information (for example, by a court order)</li>
+        <li>Where we have a duty of care concern about the safety of yourself or another person</li>
+        <li>Where disclosure is required by a relevant regulatory body</li>
+      </ul>
+      <p>Where possible, we will discuss any potential disclosure with you before it is made.</p>
+      <p>For information about how we handle your personal data, please see our <a href="/privacy">Privacy Policy</a>.</p>
+    </section>
+
+    <section id="liability">
+      <h2 class="section-title"><span>7.</span>Liability and disclaimers</h2>
+      <p>We are committed to providing high-quality, thoughtful support. However, to the extent permitted by UK law:</p>
+      <ul>
+        <li>We do not accept liability for any loss or damage arising from your use of, or inability to use, our website.</li>
+        <li>We do not accept liability for decisions you make based on information or guidance shared in our sessions or on our website.</li>
+        <li>We do not guarantee that our services will achieve any particular outcome for you.</li>
+        <li>Nothing on our website constitutes medical, legal, or financial advice. You should seek appropriate professional advice for matters in those areas.</li>
+      </ul>
+      <p>Nothing in these terms limits our liability for death or personal injury caused by our negligence, fraud, or any other matter where liability cannot be excluded by law.</p>
+      <div class="highlight-box">
+        <strong>In an emergency:</strong> If you or someone else is in immediate danger, please call 999. For urgent mental health support, contact your GP or call the Samaritans on 116 123 (free, 24/7).
+      </div>
+    </section>
+
+    <section id="website">
+      <h2 class="section-title"><span>8.</span>Website use</h2>
+      <p>You may use our website for lawful purposes only. You must not:</p>
+      <ul>
+        <li>Use the website in any way that violates any applicable law or regulation</li>
+        <li>Attempt to gain unauthorised access to any part of the website or its underlying systems</li>
+        <li>Transmit any unsolicited or unauthorised advertising or promotional material</li>
+        <li>Knowingly transmit any data or material that contains viruses or other malicious code</li>
+      </ul>
+      <p>We reserve the right to suspend or restrict access to our website at any time without notice.</p>
+      <p>Our website may contain links to external websites. We are not responsible for the content or practices of those sites and recommend you review their own terms and privacy policies.</p>
+    </section>
+
+    <section id="intellectual-property">
+      <h2 class="section-title"><span>9.</span>Intellectual property</h2>
+      <p>All content on this website — including text, images, logos, graphics, and written materials — is the intellectual property of Neurodivergent Support and Solutions, unless otherwise stated, and is protected by UK copyright law.</p>
+      <p>You may not reproduce, distribute, modify, or republish any content from this website without our prior written permission.</p>
+      <p>Any reports, materials, or resources we produce for you as part of a service are for your personal or organisational use only and may not be shared or resold without our consent.</p>
+    </section>
+
+    <section id="governing-law">
+      <h2 class="section-title"><span>10.</span>Governing law</h2>
+      <p>These Terms and Conditions are governed by and construed in accordance with the laws of England and Wales. Any disputes arising under or in connection with these terms shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+      <p>If any provision of these terms is found to be unlawful, void, or unenforceable, that provision will be deemed severable and will not affect the validity and enforceability of the remaining provisions.</p>
+    </section>
+
+    <section id="changes">
+      <h2 class="section-title"><span>11.</span>Changes to these terms</h2>
+      <p>We may update these Terms and Conditions from time to time to reflect changes in our services, legal requirements, or best practice. Any updates will be published on this page with a revised date.</p>
+      <p>Continued use of our website or services after any change constitutes your acceptance of the updated terms. We recommend you review this page periodically.</p>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title"><span>12.</span>Contact us</h2>
+      <p>If you have any questions about these Terms and Conditions, please get in touch:</p>
+      <div class="highlight-box">
+        <strong>Neurodivergent Support and Solutions</strong><br>
+        Email: <a href="mailto:hello@neurodivergentsupportandsolutions.com">hello@neurodivergentsupportandsolutions.com</a><br>
+        Website: <a href="https://neurodivergentsupportandsolutions.com">neurodivergentsupportandsolutions.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Neurodivergent Support and Solutions</strong></p>
+    <p style="margin-top:0.5rem;">
+      <a href="/">Home</a> &nbsp;·&nbsp;
+      <a href="/contact">Contact</a> &nbsp;·&nbsp;
+      <a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="/terms">Terms &amp; Conditions</a>
+    </p>
+    <p style="margin-top:0.75rem;">&copy; 2025 Neurodivergent Support and Solutions. All rights reserved.</p>
+    <p style="margin-top:0.35rem; font-size:0.75rem;">Founded by a doctor with autism and ADHD &nbsp;·&nbsp; UK-based practice</p>
+  </footer>
+
+</body>
+</html>
