@@ -84,18 +84,58 @@ Error generating stack: `+l.message+`
     <script>
       (function () {
         var FORMSPREE_ENDPOINT = 'https://formspree.io/f/meenbgzb';
+        var FIELD_ID = '__contact_method_field__';
+
+        function injectContactMethodField(form) {
+          if (form.querySelector('#' + FIELD_ID)) return;
+          var submitBtn = form.querySelector('[type="submit"]');
+          if (!submitBtn) return;
+
+          var wrapper = document.createElement('div');
+          wrapper.style.cssText = 'margin-bottom: 1.5rem;';
+
+          var label = document.createElement('label');
+          label.setAttribute('for', FIELD_ID);
+          label.textContent = 'How would you like us to get back to you? *';
+          label.style.cssText = 'display:block; font-size:0.875rem; font-weight:500; margin-bottom:0.5rem;';
+
+          var select = document.createElement('select');
+          select.id = FIELD_ID;
+          select.name = 'preferred_contact';
+          select.required = true;
+          select.style.cssText = 'width:100%; padding:0.75rem 1rem; border-radius:0.5rem; border:1px solid #e2e8f0; background:#fff; font-size:1rem; outline:none;';
+
+          [
+            ['', 'Please select...'],
+            ['email', 'Email'],
+            ['video_call', 'Video Call'],
+            ['no_preference', 'No preference — whatever works best']
+          ].forEach(function (opt) {
+            var o = document.createElement('option');
+            o.value = opt[0];
+            o.textContent = opt[1];
+            if (!opt[0]) o.disabled = true;
+            select.appendChild(o);
+          });
+
+          wrapper.appendChild(label);
+          wrapper.appendChild(select);
+          submitBtn.parentNode.insertBefore(wrapper, submitBtn);
+        }
 
         function attachFormspree(form) {
           if (form.__formspreeAttached) return;
           form.__formspreeAttached = true;
 
+          injectContactMethodField(form);
+
           form.addEventListener('submit', function (e) {
             var data = {
               name: (form.querySelector('[name="name"]') || {}).value || '',
               email: (form.querySelector('[name="email"]') || {}).value || '',
-              phone: (form.querySelector('[name="phone"]') || {}).value || '',
               service: (form.querySelector('[name="service"]') || {}).value || '',
-              message: (form.querySelector('[name="message"]') || {}).value || ''
+              message: (form.querySelector('[name="message"]') || {}).value || '',
+              preferred_contact: (form.querySelector('[name="preferred_contact"]') || {}).value || ''
             };
 
             fetch(FORMSPREE_ENDPOINT, {
@@ -110,7 +150,10 @@ Error generating stack: `+l.message+`
 
         function scanForms() {
           var forms = document.querySelectorAll('form');
-          forms.forEach(attachFormspree);
+          forms.forEach(function (form) {
+            attachFormspree(form);
+            injectContactMethodField(form);
+          });
         }
 
         var observer = new MutationObserver(function () {
