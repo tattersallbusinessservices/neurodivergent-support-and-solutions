@@ -86,28 +86,35 @@ Error generating stack: `+l.message+`
         var FORMSPREE_ENDPOINT = 'https://formspree.io/f/meenbgzb';
         var FIELD_ID = '__contact_method_field__';
 
+        var PHONE_FIELD_ID = '__contact_phone_field__';
+        var fieldStyle = 'width:100%; padding:0.75rem 1rem; border-radius:0.5rem; border:1px solid #e2e8f0; background:#fff; font-size:1rem; outline:none;';
+        var labelStyle = 'display:block; font-size:0.875rem; font-weight:500; margin-bottom:0.5rem;';
+
         function injectContactMethodField(form) {
           if (form.querySelector('#' + FIELD_ID)) return;
           var submitBtn = form.querySelector('[type="submit"]');
           if (!submitBtn) return;
 
+          // --- Preferred contact method dropdown ---
           var wrapper = document.createElement('div');
           wrapper.style.cssText = 'margin-bottom: 1.5rem;';
 
           var label = document.createElement('label');
           label.setAttribute('for', FIELD_ID);
           label.textContent = 'How would you like us to get back to you? *';
-          label.style.cssText = 'display:block; font-size:0.875rem; font-weight:500; margin-bottom:0.5rem;';
+          label.style.cssText = labelStyle;
 
           var select = document.createElement('select');
           select.id = FIELD_ID;
           select.name = 'preferred_contact';
           select.required = true;
-          select.style.cssText = 'width:100%; padding:0.75rem 1rem; border-radius:0.5rem; border:1px solid #e2e8f0; background:#fff; font-size:1rem; outline:none;';
+          select.style.cssText = fieldStyle;
 
           [
             ['', 'Please select...'],
             ['email', 'Email'],
+            ['whatsapp', 'WhatsApp'],
+            ['sms', 'SMS'],
             ['video_call', 'Video Call'],
             ['no_preference', 'No preference — whatever works best']
           ].forEach(function (opt) {
@@ -120,7 +127,35 @@ Error generating stack: `+l.message+`
 
           wrapper.appendChild(label);
           wrapper.appendChild(select);
+
+          // --- Conditional phone number field ---
+          var phoneWrapper = document.createElement('div');
+          phoneWrapper.id = PHONE_FIELD_ID;
+          phoneWrapper.style.cssText = 'margin-bottom:1.5rem; display:none;';
+
+          var phoneLabel = document.createElement('label');
+          phoneLabel.setAttribute('for', PHONE_FIELD_ID + '_input');
+          phoneLabel.textContent = 'Phone number *';
+          phoneLabel.style.cssText = labelStyle;
+
+          var phoneInput = document.createElement('input');
+          phoneInput.type = 'tel';
+          phoneInput.id = PHONE_FIELD_ID + '_input';
+          phoneInput.name = 'phone';
+          phoneInput.placeholder = 'e.g. 07700 900000';
+          phoneInput.style.cssText = fieldStyle;
+
+          phoneWrapper.appendChild(phoneLabel);
+          phoneWrapper.appendChild(phoneInput);
+
+          select.addEventListener('change', function () {
+            var needsPhone = select.value === 'whatsapp' || select.value === 'sms';
+            phoneWrapper.style.display = needsPhone ? 'block' : 'none';
+            phoneInput.required = needsPhone;
+          });
+
           submitBtn.parentNode.insertBefore(wrapper, submitBtn);
+          submitBtn.parentNode.insertBefore(phoneWrapper, submitBtn);
         }
 
         function attachFormspree(form) {
@@ -135,7 +170,8 @@ Error generating stack: `+l.message+`
               email: (form.querySelector('[name="email"]') || {}).value || '',
               service: (form.querySelector('[name="service"]') || {}).value || '',
               message: (form.querySelector('[name="message"]') || {}).value || '',
-              preferred_contact: (form.querySelector('[name="preferred_contact"]') || {}).value || ''
+              preferred_contact: (form.querySelector('[name="preferred_contact"]') || {}).value || '',
+              phone: (form.querySelector('[name="phone"]') || {}).value || ''
             };
 
             fetch(FORMSPREE_ENDPOINT, {
