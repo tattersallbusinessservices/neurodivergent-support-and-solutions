@@ -156,6 +156,26 @@ Error generating stack: `+l.message+`
 
           submitBtn.parentNode.insertBefore(wrapper, submitBtn);
           submitBtn.parentNode.insertBefore(phoneWrapper, submitBtn);
+
+          // --- GDPR consent checkbox ---
+          var consentWrapper = document.createElement('div');
+          consentWrapper.style.cssText = 'margin-bottom:1.5rem; display:flex; align-items:flex-start; gap:0.75rem;';
+
+          var consentInput = document.createElement('input');
+          consentInput.type = 'checkbox';
+          consentInput.id = '__gdpr_consent__';
+          consentInput.name = 'gdpr_consent';
+          consentInput.required = true;
+          consentInput.style.cssText = 'margin-top:0.2rem; width:1rem; height:1rem; flex-shrink:0; accent-color:#6366f1; cursor:pointer;';
+
+          var consentLabel = document.createElement('label');
+          consentLabel.setAttribute('for', '__gdpr_consent__');
+          consentLabel.style.cssText = 'font-size:0.8rem; line-height:1.5; color:#64748b; cursor:pointer;';
+          consentLabel.innerHTML = 'I agree that my submitted data will be collected and stored by Neurodivergent Support and Solutions solely for the purpose of responding to my enquiry, in accordance with our <a href="/privacy" style="color:inherit; text-decoration:underline;">Privacy Policy</a>. Your data will never be shared with third parties or used for marketing without your explicit consent. *';
+
+          consentWrapper.appendChild(consentInput);
+          consentWrapper.appendChild(consentLabel);
+          submitBtn.parentNode.insertBefore(consentWrapper, submitBtn);
         }
 
         function attachFormspree(form) {
@@ -171,7 +191,8 @@ Error generating stack: `+l.message+`
               service: (form.querySelector('[name="service"]') || {}).value || '',
               message: (form.querySelector('[name="message"]') || {}).value || '',
               preferred_contact: (form.querySelector('[name="preferred_contact"]') || {}).value || '',
-              phone: (form.querySelector('[name="phone"]') || {}).value || ''
+              phone: (form.querySelector('[name="phone"]') || {}).value || '',
+              gdpr_consent: (form.querySelector('[name="gdpr_consent"]') || {}).checked ? 'Yes' : 'No'
             };
 
             fetch(FORMSPREE_ENDPOINT, {
