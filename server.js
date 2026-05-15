@@ -28,15 +28,22 @@ const server = http.createServer((req, res) => {
 
   fs.stat(filePath, (err, stat) => {
     if (err || !stat.isFile()) {
-      const indexPath = path.join(ROOT, 'index.html');
-      fs.readFile(indexPath, (err2, data) => {
-        if (err2) {
-          res.writeHead(500);
-          res.end('Server error');
-          return;
+      const htmlFilePath = path.join(ROOT, urlPath + '.html');
+      fs.stat(htmlFilePath, (err2, stat2) => {
+        if (!err2 && stat2.isFile()) {
+          fs.readFile(htmlFilePath, (err3, data) => {
+            if (err3) { res.writeHead(500); res.end('Server error'); return; }
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(data);
+          });
+        } else {
+          const indexPath = path.join(ROOT, 'index.html');
+          fs.readFile(indexPath, (err3, data) => {
+            if (err3) { res.writeHead(500); res.end('Server error'); return; }
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(data);
+          });
         }
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(data);
       });
       return;
     }

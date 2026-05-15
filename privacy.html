@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Neurodivergent Support and Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: oklch(64% .108 172.5);
+      --primary-dark: oklch(52% .108 172.5);
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+    .logo-wrap img { height: 48px; width: auto; }
+    .logo-wrap span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.3;
+      max-width: 180px;
+    }
+    nav a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--primary);
+      text-decoration: none;
+      border: 1.5px solid var(--primary);
+      border-radius: 6px;
+      padding: 0.4rem 1rem;
+      transition: background 0.15s, color 0.15s;
+    }
+    nav a:hover { background: var(--primary); color: #fff; }
+
+    /* ── Hero band ── */
+    .hero {
+      background: linear-gradient(135deg, oklch(97% .02 172.5), oklch(96% .03 200));
+      padding: 3.5rem 1.5rem 3rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+    .last-updated {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.25rem 0.85rem;
+    }
+
+    /* ── Content ── */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    /* Table of contents */
+    .toc {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3rem;
+    }
+    .toc h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    .toc ol {
+      padding-left: 1.25rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+    .toc a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .toc a:hover { text-decoration: underline; }
+
+    /* Sections */
+    section { margin-bottom: 2.75rem; scroll-margin-top: 90px; }
+
+    h2.section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 1.1rem;
+    }
+    h2.section-title span {
+      color: var(--primary);
+      margin-right: 0.4rem;
+    }
+
+    p { margin-bottom: 0.9rem; color: #334155; }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      padding-left: 1.4rem;
+      margin-bottom: 0.9rem;
+      color: #334155;
+    }
+    li { margin-bottom: 0.35rem; }
+
+    .highlight-box {
+      background: oklch(97% .02 172.5);
+      border: 1px solid oklch(88% .05 172.5);
+      border-radius: 8px;
+      padding: 1.1rem 1.4rem;
+      margin: 1.1rem 0;
+      font-size: 0.95rem;
+    }
+    .highlight-box strong { color: var(--primary-dark); }
+
+    a { color: var(--primary); }
+    a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      background: #1e293b;
+      color: #94a3b8;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+    footer a { color: #cbd5e1; }
+    footer strong { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a class="logo-wrap" href="/">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663463097640/FZUAD8TqmYhAPceK54K6Dx/logo_c442d514.png" alt="Neurodivergent Support and Solutions logo" />
+        <span>Neurodivergent Support and Solutions</span>
+      </a>
+      <nav>
+        <a href="/">← Back to site</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1>Privacy Policy</h1>
+    <p>How we collect, use, and protect your personal information.</p>
+    <span class="last-updated">Last updated: May 2025</span>
+  </div>
+
+  <main>
+
+    <div class="toc">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#who-we-are">Who we are</a></li>
+        <li><a href="#data-we-collect">Data we collect</a></li>
+        <li><a href="#how-we-use-it">How we use your information</a></li>
+        <li><a href="#legal-basis">Legal basis for processing</a></li>
+        <li><a href="#data-sharing">Who we share your data with</a></li>
+        <li><a href="#data-retention">How long we keep your data</a></li>
+        <li><a href="#your-rights">Your rights</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+        <li><a href="#third-party">Third-party links</a></li>
+        <li><a href="#changes">Changes to this policy</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ol>
+    </div>
+
+    <section id="who-we-are">
+      <h2 class="section-title"><span>1.</span>Who we are</h2>
+      <p>Neurodivergent Support and Solutions is a UK-based practice founded and operated by a doctor with lived experience of autism and ADHD. We provide coaching, advocacy, assessments, and workplace support for neurodivergent individuals and organisations.</p>
+      <p>For the purposes of UK data protection law, we are the <strong>data controller</strong> responsible for your personal information.</p>
+      <p><strong>Contact:</strong> <a href="mailto:hello@neurodivergentsupportandsolutions.com">hello@neurodivergentsupportandsolutions.com</a></p>
+    </section>
+
+    <section id="data-we-collect">
+      <h2 class="section-title"><span>2.</span>Data we collect</h2>
+      <p>We only collect information that you choose to provide to us. This may include:</p>
+      <ul>
+        <li><strong>Contact details</strong> — your name and email address</li>
+        <li><strong>Phone number</strong> — only if you select WhatsApp or SMS as your preferred contact method</li>
+        <li><strong>Enquiry details</strong> — the service you are interested in and the message you send us</li>
+        <li><strong>Communication preferences</strong> — how you would like us to get back to you</li>
+        <li><strong>Consent records</strong> — a record that you agreed to this policy when submitting a form</li>
+      </ul>
+      <p>We do not collect sensitive personal data (such as health or disability information) unless you choose to share it voluntarily within your message.</p>
+    </section>
+
+    <section id="how-we-use-it">
+      <h2 class="section-title"><span>3.</span>How we use your information</h2>
+      <p>We use the information you provide solely to:</p>
+      <ul>
+        <li>Respond to your enquiry via your preferred contact method</li>
+        <li>Recommend the most appropriate service for your needs</li>
+        <li>Arrange and manage appointments or consultations</li>
+        <li>Comply with our legal and professional obligations</li>
+      </ul>
+      <div class="highlight-box">
+        <strong>We will never use your information for marketing purposes</strong> without your explicit, separate consent. We will never sell, rent, or trade your personal data to any third party.
+      </div>
+    </section>
+
+    <section id="legal-basis">
+      <h2 class="section-title"><span>4.</span>Legal basis for processing</h2>
+      <p>Under the UK General Data Protection Regulation (UK GDPR), we rely on the following legal bases to process your data:</p>
+      <ul>
+        <li><strong>Consent (Article 6(1)(a))</strong> — you have given us clear consent by ticking the checkbox on our contact form before submitting your information.</li>
+        <li><strong>Legitimate interests (Article 6(1)(f))</strong> — we have a legitimate interest in responding to enquiries sent to us directly.</li>
+        <li><strong>Legal obligation (Article 6(1)(c))</strong> — where we are required to retain records for legal or professional regulatory purposes.</li>
+      </ul>
+      <p>Where we process any sensitive personal data you voluntarily include (such as health information), we rely on your <strong>explicit consent (Article 9(2)(a))</strong>.</p>
+    </section>
+
+    <section id="data-sharing">
+      <h2 class="section-title"><span>5.</span>Who we share your data with</h2>
+      <p>We do not sell or share your personal data with third parties for their own purposes. Your data may be processed by the following trusted service providers who act on our behalf:</p>
+      <ul>
+        <li><strong>Formspree</strong> — our contact form submission processor, which securely transmits your enquiry to us. Formspree is GDPR-compliant. See <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Formspree's Privacy Policy</a>.</li>
+      </ul>
+      <p>All third-party processors are bound by data processing agreements and are only permitted to use your data to provide their service to us.</p>
+      <p>We may disclose your information if required to do so by law or by a regulatory body.</p>
+    </section>
+
+    <section id="data-retention">
+      <h2 class="section-title"><span>6.</span>How long we keep your data</h2>
+      <p>We retain your personal information only for as long as necessary to fulfil the purpose for which it was collected:</p>
+      <ul>
+        <li><strong>Enquiries that do not result in a service</strong> — deleted within 12 months of our last communication</li>
+        <li><strong>Client records</strong> — retained for 7 years after the end of the professional relationship, in line with UK healthcare and professional practice guidance</li>
+        <li><strong>Consent records</strong> — retained for as long as we process your data, as evidence of your consent</li>
+      </ul>
+      <p>After the relevant retention period, your data is securely deleted.</p>
+    </section>
+
+    <section id="your-rights">
+      <h2 class="section-title"><span>7.</span>Your rights</h2>
+      <p>Under UK GDPR, you have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Right of access</strong> — to request a copy of the personal data we hold about you</li>
+        <li><strong>Right to rectification</strong> — to ask us to correct any inaccurate or incomplete data</li>
+        <li><strong>Right to erasure</strong> — to request deletion of your data in certain circumstances</li>
+        <li><strong>Right to restrict processing</strong> — to ask us to pause processing of your data</li>
+        <li><strong>Right to data portability</strong> — to receive your data in a structured, machine-readable format</li>
+        <li><strong>Right to object</strong> — to object to processing based on legitimate interests</li>
+        <li><strong>Right to withdraw consent</strong> — to withdraw any consent you have given at any time, without affecting the lawfulness of prior processing</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us at <a href="mailto:hello@neurodivergentsupportandsolutions.com">hello@neurodivergentsupportandsolutions.com</a>. We will respond within one month.</p>
+      <p>If you are not satisfied with how we handle your data, you have the right to lodge a complaint with the <strong>Information Commissioner's Office (ICO)</strong> at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a> or by calling 0303 123 1113.</p>
+    </section>
+
+    <section id="cookies">
+      <h2 class="section-title"><span>8.</span>Cookies</h2>
+      <p>Our website may use minimal, functional cookies necessary for the site to operate correctly. We do not use tracking, advertising, or analytics cookies without your consent.</p>
+      <p>You can control and delete cookies through your browser settings at any time.</p>
+    </section>
+
+    <section id="third-party">
+      <h2 class="section-title"><span>9.</span>Third-party links</h2>
+      <p>Our website contains links to external organisations and resources (such as autism charities and support networks). These websites have their own privacy policies and we are not responsible for their content or data practices. We encourage you to review their policies before providing any personal information.</p>
+    </section>
+
+    <section id="changes">
+      <h2 class="section-title"><span>10.</span>Changes to this policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. Any updates will be published on this page with a revised date. We encourage you to review this page periodically.</p>
+      <p>Continued use of our contact form after a change to this policy constitutes acceptance of the updated terms.</p>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title"><span>11.</span>Contact us</h2>
+      <p>If you have any questions about this Privacy Policy or how we handle your personal data, please get in touch:</p>
+      <div class="highlight-box">
+        <strong>Neurodivergent Support and Solutions</strong><br>
+        Email: <a href="mailto:hello@neurodivergentsupportandsolutions.com">hello@neurodivergentsupportandsolutions.com</a><br>
+        Website: <a href="https://neurodivergentsupportandsolutions.com">neurodivergentsupportandsolutions.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Neurodivergent Support and Solutions</strong></p>
+    <p style="margin-top:0.5rem;">
+      <a href="/">Home</a> &nbsp;·&nbsp;
+      <a href="/contact">Contact</a> &nbsp;·&nbsp;
+      <a href="/privacy">Privacy Policy</a>
+    </p>
+    <p style="margin-top:0.75rem;">&copy; 2025 Neurodivergent Support and Solutions. All rights reserved.</p>
+    <p style="margin-top:0.35rem; font-size:0.75rem;">Founded by a doctor with autism and ADHD &nbsp;·&nbsp; UK-based practice</p>
+  </footer>
+
+</body>
+</html>
