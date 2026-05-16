@@ -12,6 +12,90 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@400;500;700&display=swap" rel="stylesheet" />
     <script type="module" crossorigin src="/assets/index-vfgtZxcK.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-C3hN1pMN.css">
+    <style>
+      /* Custom banner modifications */
+      header .bg-gradient-to-r img {
+        height: 110px !important;
+        width: auto !important;
+      }
+      
+      /* Hide the Founded by a Doctor text */
+      header .text-center.text-xs {
+        display: none !important;
+      }
+      
+      /* Adjust header layout to put logo and nav on same line */
+      header .bg-gradient-to-r {
+        padding: 0.25rem 0 !important;
+      }
+      
+      header .bg-gradient-to-r .container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 1.5rem !important;
+        flex-wrap: nowrap !important;
+      }
+      
+      header .bg-gradient-to-r a {
+        margin: 0 !important;
+        flex-shrink: 0 !important;
+      }
+      
+      /* Reduce the top navigation bar padding */
+      header .border-b.border-border {
+        padding: 0.5rem 0 !important;
+      }
+      
+      header .border-b.border-border .container {
+        padding: 0.5rem 1rem !important;
+      }
+      
+      /* Move navigation to same line as logo */
+      header {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      
+      header > div:first-child {
+        order: 1 !important;
+      }
+      
+      header > div:last-child {
+        order: 2 !important;
+      }
+      
+      /* Hide the second nav section and integrate into first */
+      header .border-b.border-border {
+        display: none !important;
+      }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Wait a bit for React to render
+        setTimeout(function() {
+          const header = document.querySelector('header');
+          if (!header) return;
+          
+          const logoSection = header.querySelector('.bg-gradient-to-r');
+          const navSection = header.querySelector('.border-b.border-border');
+          
+          if (logoSection && navSection) {
+            // Get the nav element
+            const nav = navSection.querySelector('nav');
+            if (nav) {
+              // Move nav into the logo section
+              const container = logoSection.querySelector('.container');
+              if (container) {
+                container.appendChild(nav);
+                // Remove the now-empty nav section
+                navSection.style.display = 'none';
+              }
+            }
+          }
+        }, 100);
+      });
+    </script>
   </head>
 
   <body>
