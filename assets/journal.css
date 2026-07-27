@@ -1,0 +1,129 @@
+/* Neurodiversity Journal — shared styles, matches site brand fonts/colors */
+:root {
+  --nj-accent: #4f9e8a;
+  --nj-accent-dark: #3c7c6c;
+  --nj-text: #2b2823;
+  --nj-bg: #faf9f7;
+  --nj-card-bg: #ffffff;
+  --nj-border: #e7e4de;
+}
+.nj-wrap {
+  background: var(--nj-bg);
+  color: var(--nj-text);
+  min-height: 100vh;
+}
+.nj-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  font-family: 'Lato', Arial, sans-serif;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+.nj-container h1, .nj-container h2, .nj-container h3 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: var(--nj-text);
+  line-height: 1.25;
+}
+.nj-container h1 { font-size: 2rem; margin-bottom: 4px; }
+.nj-container h2 { font-size: 1.4rem; margin-top: 2.2em; border-bottom: 2px solid var(--nj-accent); padding-bottom: 6px; }
+.nj-container h3 { font-size: 1.15rem; margin-top: 1.8em; color: var(--nj-accent-dark); }
+.nj-container p { margin: 1em 0; }
+.nj-container ul { padding-left: 1.4em; margin: 1em 0; }
+.nj-container li { margin: 0.4em 0; }
+.nj-meta {
+  font-size: 0.9rem;
+  color: #7a756c;
+  margin-bottom: 2em;
+}
+.nj-breadcrumb {
+  font-size: 0.9rem;
+  margin-bottom: 1.5em;
+}
+.nj-breadcrumb a { color: var(--nj-accent-dark); text-decoration: none; }
+.nj-breadcrumb a:hover { text-decoration: underline; }
+.nj-container a { color: var(--nj-accent-dark); }
+blockquote {
+  border-left: 4px solid var(--nj-accent);
+  margin: 2em 0;
+  padding: 0.5em 1.5em;
+  font-style: italic;
+  font-size: 1.2rem;
+  background: var(--nj-card-bg);
+}
+blockquote cite {
+  display: block;
+  margin-top: 0.6em;
+  font-style: normal;
+  font-size: 0.95rem;
+  color: #7a756c;
+}
+.callout {
+  background: var(--nj-card-bg);
+  border: 1px solid var(--nj-border);
+  border-left: 4px solid var(--nj-accent);
+  border-radius: 6px;
+  padding: 1.2em 1.5em;
+  margin: 2em 0;
+}
+.callout h2 { margin-top: 0; border-bottom: none; padding-bottom: 0; }
+.faq-callout h3.faq-q { font-size: 1.05rem; margin-top: 1.2em; margin-bottom: 0.3em; color: var(--nj-text); }
+.faq-callout p.faq-a { margin-top: 0; }
+.references { font-size: 0.92rem; color: #55514a; margin: 2.5em 0; }
+.references h2 { border-bottom: none; }
+.related-articles { margin: 2.5em 0; }
+.related-list { list-style: none; padding-left: 0; }
+.related-list li a {
+  display: inline-block;
+  padding: 6px 0;
+  font-weight: 600;
+}
+aside.perspective {
+  background: #f1f7f5;
+  border-radius: 6px;
+  padding: 1.4em 1.6em;
+  margin: 2.5em 0;
+  font-style: italic;
+}
+.perspective-label {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--nj-accent-dark);
+  margin-bottom: 0.8em;
+}
+.nj-cta {
+  margin-top: 3em;
+  padding: 1.5em;
+  background: var(--nj-accent);
+  color: #fff;
+  border-radius: 8px;
+  text-align: center;
+}
+.nj-cta a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.nj-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  margin-top: 2em;
+}
+.nj-card {
+  background: var(--nj-card-bg);
+  border: 1px solid var(--nj-border);
+  border-radius: 8px;
+  padding: 1.5em;
+  display: block;
+  text-decoration: none;
+  color: var(--nj-text);
+}
+.nj-card:hover { border-color: var(--nj-accent); }
+.nj-card h2 { margin: 0 0 0.3em; border: none; padding: 0; font-size: 1.25rem; }
+.nj-card p { margin: 0; color: #55514a; }
+.nj-card .nj-read-time { color: var(--nj-accent-dark); font-size: 0.85rem; font-weight: 600; margin-top: 0.6em; display: block; }
