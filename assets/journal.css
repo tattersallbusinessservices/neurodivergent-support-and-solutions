@@ -108,6 +108,45 @@ aside.perspective {
   font-weight: 700;
   text-decoration: underline;
 }
+.nj-header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--nj-border);
+}
+.nj-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.nj-header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--nj-text);
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.nj-header-logo img { height: 40px; width: auto; }
+.nj-header-nav {
+  display: flex;
+  gap: 1.3em;
+  flex-wrap: wrap;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 0.95rem;
+}
+.nj-header-nav a {
+  color: var(--nj-text);
+  text-decoration: none;
+  font-weight: 600;
+}
+.nj-header-nav a:hover { color: var(--nj-accent-dark); }
+.nj-header-nav a.current { color: var(--nj-accent-dark); border-bottom: 2px solid var(--nj-accent); }
 .nj-cards {
   display: flex;
   flex-direction: column;
