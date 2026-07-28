@@ -147,6 +147,88 @@ aside.perspective {
 }
 .nj-header-nav a:hover { color: var(--nj-accent-dark); }
 .nj-header-nav a.current { color: var(--nj-accent-dark); border-bottom: 2px solid var(--nj-accent); }
+.nj-menu-toggle-checkbox { display: none; }
+.nj-menu-toggle-label {
+  display: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 4px 8px;
+  color: var(--nj-text);
+}
+@media (max-width: 720px) {
+  .nj-menu-toggle-label { display: block; }
+  .nj-header-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    order: 3;
+  }
+  .nj-header-nav a {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--nj-border);
+  }
+  .nj-menu-toggle-checkbox:checked ~ .nj-header-nav { display: flex; }
+  .nj-header-inner { position: relative; }
+}
+.nj-footer {
+  background: #2b2823;
+  color: #e7e4de;
+  margin-top: 3em;
+}
+.nj-footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5em 24px;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 0.92rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: space-between;
+}
+.nj-footer h3 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.95rem;
+  color: #fff;
+  margin: 0 0 0.8em;
+}
+.nj-footer a { color: #cfd0cb; text-decoration: none; }
+.nj-footer a:hover { color: #fff; }
+.nj-footer ul { list-style: none; padding: 0; margin: 0; }
+.nj-footer li { margin: 0.4em 0; }
+.nj-footer-bottom {
+  border-top: 1px solid #454138;
+  text-align: center;
+  padding: 1.2em 24px;
+  font-size: 0.85rem;
+  color: #a8a59d;
+}
+.nj-form label { display: block; font-weight: 600; margin: 1em 0 0.3em; font-family: 'Montserrat', Arial, sans-serif; }
+.nj-form input, .nj-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--nj-border);
+  border-radius: 6px;
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.nj-form textarea { min-height: 140px; resize: vertical; }
+.nj-form button {
+  margin-top: 1.5em;
+  background: var(--nj-accent);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.nj-form button:hover { background: var(--nj-accent-dark); }
 .nj-cards {
   display: flex;
   flex-direction: column;

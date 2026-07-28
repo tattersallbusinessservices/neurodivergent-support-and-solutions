@@ -14,20 +14,77 @@
     <meta property="og:image" content="https://neurodivergentsupportandsolutions.com/logo-cropped.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/assets/index-C3hN1pMN.css" />
-    <link rel="stylesheet" href="/assets/header-fix.css" />
-    <script src="/assets/header-fix.js"></script>
-    <script src="/assets/journal-nav.js"></script>
+    <link rel="stylesheet" href="/assets/journal.css" />
   </head>
   <body>
-    <div id="root">
-      <main style="max-width:760px;margin:0 auto;padding:48px 24px;font-family:Lato,Arial,sans-serif;line-height:1.6;color:#222;">
-        <h1 style="font-family:Montserrat,Arial,sans-serif;">Contact Us Today</h1>
-        <p>Get in touch to discuss your needs and how we can support you. We&#x27;ll discuss your needs and recommend the best combination of services for your situation.</p>
-        <p>Email: hello@neurodivergentsupportandsolutions.com</p>
+    <div class="nj-wrap">
+  <header class="nj-header">
+      <div class="nj-header-inner">
+        <a class="nj-header-logo" href="/"><img src="/logo-cropped.png" alt="Neurodivergent Support and Solutions" />Neurodivergent Support and Solutions</a>
+        <input type="checkbox" id="nj-menu-toggle" class="nj-menu-toggle-checkbox" />
+        <label for="nj-menu-toggle" class="nj-menu-toggle-label">&#9776;</label>
+        <nav class="nj-header-nav">
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/coaching">Coaching</a>
+            <a href="/assessments">Assessments</a>
+            <a href="/reports">Reports</a>
+            <a href="/access-to-work">Access to Work</a>
+            <a href="/employers">Employers</a>
+            <a href="/journal">Neurodiversity Journal</a>
+            <a href="/contact" class="current">Contact</a>
+        </nav>
+      </div>
+    </header>
+      <div class="nj-container">
+        <p class="nj-breadcrumb"><a href="/">Home</a> &rsaquo; Contact Us Today</p>
+        <h1>Contact Us Today</h1>
+        <p>Get in touch to discuss your needs and how we can support you. We'll discuss your needs and recommend the best combination of services for your situation.</p>
         <p>Absolutely, all information is treated with strict confidentiality, in line with professional standards and data protection regulations.</p>
-        <p><a href="/">Return to homepage</a></p>
-      </main>
+        <form class="nj-form" action="https://formspree.io/f/meenbgzb" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+          <label for="company">Company (optional)</label>
+          <input type="text" id="company" name="company" />
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <p style="margin-top:2em;">Or email us directly: <a href="mailto:hello@neurodivergentsupportandsolutions.com">hello@neurodivergentsupportandsolutions.com</a></p>
+      </div>
+  <footer class="nj-footer">
+      <div class="nj-footer-inner">
+        <div>
+          <h3>Neurodivergent Support and Solutions</h3>
+          <p>Practical guidance. Personal support.<br />Founded by a doctor with lived experience of autism and ADHD.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/journal">Neurodiversity Journal</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Get in Touch</h3>
+          <ul>
+            <li><a href="mailto:hello@neurodivergentsupportandsolutions.com">hello@neurodivergentsupportandsolutions.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="nj-footer-bottom">&copy; 2026 Neurodivergent Support and Solutions. All rights reserved.</div>
+    </footer>
     </div>
-    <script type="module" src="/assets/index-vfgtZxcK.js"></script>
   </body>
 </html>
