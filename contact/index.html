@@ -36,23 +36,68 @@
         </nav>
       </div>
     </header>
+      <div class="nj-hero">
+        <p class="nj-breadcrumb"><a href="/">Home</a> &rsaquo; Get in Touch</p>
+        <h1>Get in Touch</h1>
+        <p>We're here to help. Reach out with any questions or to discuss your needs.</p>
+      </div>
       <div class="nj-container">
-        <p class="nj-breadcrumb"><a href="/">Home</a> &rsaquo; Contact Us Today</p>
-        <h1>Contact Us Today</h1>
-        <p>Get in touch to discuss your needs and how we can support you. We'll discuss your needs and recommend the best combination of services for your situation.</p>
-        <p>Absolutely, all information is treated with strict confidentiality, in line with professional standards and data protection regulations.</p>
+        
+        <div class="nj-info-grid">
+          <div class="nj-info-card">
+            <h3>Email</h3>
+            <p><a href="mailto:hello@neurodivergentsupportandsolutions.com">hello@neurodivergentsupportandsolutions.com</a></p>
+          </div>
+          <div class="nj-info-card">
+            <h3>Location</h3>
+            <p>UK-based practice</p>
+          </div>
+          <div class="nj-info-card">
+            <h3>Response Time</h3>
+            <p>We aim to respond within 2 business days</p>
+          </div>
+        </div>
+        <div class="nj-note">
+          <p><strong>Accessibility:</strong> If you need to communicate in a specific way (e.g., email only, video calls, written communication), please let us know.</p>
+        </div>
+        <h2 style="text-align:left;border-bottom:none;">Send us a Message</h2>
         <form class="nj-form" action="https://formspree.io/f/meenbgzb" method="POST">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required />
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
-          <label for="company">Company (optional)</label>
-          <input type="text" id="company" name="company" />
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          <label for="service">Interested Service *</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service...</option>
+            <option value="coaching">Coaching &amp; Support</option>
+            <option value="reports">Reports &amp; Advocacy</option>
+            <option value="access-to-work">Access to Work Support</option>
+            <option value="employers">For Employers</option>
+            <option value="other">Other / Not Sure</option>
+          </select>
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" placeholder="Tell us about your needs and how we can help..." required></textarea>
           <button type="submit">Send Message</button>
         </form>
-        <p style="margin-top:2em;">Or email us directly: <a href="mailto:hello@neurodivergentsupportandsolutions.com">hello@neurodivergentsupportandsolutions.com</a></p>
+        <p style="margin-top:1em;font-size:0.85rem;color:#7a756c;">* Required fields. We respect your privacy and will only use your information to respond to your inquiry. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+
+        <div class="nj-section nj-section-alt" style="margin:3em -24px -1px;">
+        <div class="nj-section-inner">
+        <h2>Frequently Asked Questions</h2>
+        <div class="callout faq-callout" style="margin-top:1.5em;">
+          <h3 class="faq-q">How quickly will I hear back?</h3>
+          <p class="faq-a">We aim to respond to all enquiries within 2 business days. If your matter is urgent, please mark your email as urgent and we will do our best to get back to you as quickly as possible.</p>
+          <h3 class="faq-q">What's the first step?</h3>
+          <p class="faq-a">Start by getting in touch! We'll discuss your situation, answer your questions, and recommend the best service for your needs.</p>
+          <h3 class="faq-q">Do you offer free consultations?</h3>
+          <p class="faq-a">We offer an initial consultation to discuss your needs. Pricing for services varies depending on what you need.</p>
+          <h3 class="faq-q">Can I access services remotely?</h3>
+          <p class="faq-a">Yes! Many of our services are available remotely via video call or email, depending on your preference.</p>
+          <h3 class="faq-q">Are your services confidential?</h3>
+          <p class="faq-a">Absolutely. All information is treated with strict confidentiality, in line with professional standards and data protection regulations.</p>
+        </div>
+        </div>
+        </div>
       </div>
   <footer class="nj-footer">
       <div class="nj-footer-inner">

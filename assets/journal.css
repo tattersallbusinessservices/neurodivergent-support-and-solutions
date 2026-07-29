@@ -95,6 +95,91 @@ aside.perspective {
   color: var(--nj-accent-dark);
   margin-bottom: 0.8em;
 }
+.nj-hero {
+  background: linear-gradient(135deg, #eef6f4 0%, #f7f2ea 100%);
+  border-bottom: 1px solid var(--nj-border);
+  text-align: center;
+  padding: 3.5em 24px 3em;
+}
+.nj-hero h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.4em;
+}
+.nj-hero p {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  color: #55514a;
+}
+.nj-btn {
+  display: inline-block;
+  background: var(--nj-accent);
+  color: #fff !important;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none !important;
+  box-shadow: 0 2px 6px rgba(79,158,138,0.3);
+}
+.nj-btn:hover { background: var(--nj-accent-dark); }
+.nj-section { padding: 3em 0; }
+.nj-section-alt { background: #f4f2ee; }
+.nj-section-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+.nj-section h2 { text-align: center; margin-top: 0; border-bottom: none; font-size: 1.8rem; }
+.nj-service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2em;
+  margin-top: 2em;
+}
+.nj-service-card {
+  background: #fff;
+  border: 1px solid var(--nj-border);
+  border-radius: 10px;
+  padding: 1.6em;
+  box-shadow: 0 2px 8px rgba(43,40,35,0.05);
+  text-decoration: none;
+  color: var(--nj-text);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.nj-service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(43,40,35,0.1);
+  border-color: var(--nj-accent);
+}
+.nj-service-card h3 {
+  margin: 0 0 0.5em;
+  font-size: 1.1rem;
+  color: var(--nj-text);
+}
+.nj-service-card p { margin: 0; color: #55514a; font-size: 0.95rem; }
+.nj-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2em;
+  margin: 2em 0;
+}
+.nj-info-card {
+  background: #fff;
+  border: 1px solid var(--nj-border);
+  border-left: 4px solid var(--nj-accent);
+  border-radius: 8px;
+  padding: 1.2em 1.4em;
+}
+.nj-info-card h3 {
+  margin: 0 0 0.3em;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+}
+.nj-info-card p { margin: 0; color: #55514a; font-size: 0.95rem; }
+.nj-note {
+  background: #f1f7f5;
+  border-radius: 8px;
+  padding: 1.2em 1.4em;
+  margin: 2em 0;
+  font-size: 0.95rem;
+}
 .nj-cta {
   margin-top: 3em;
   padding: 1.5em;
@@ -109,8 +194,13 @@ aside.perspective {
   text-decoration: underline;
 }
 .nj-header {
-  background: #ffffff;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--nj-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 1px 3px rgba(43,40,35,0.06);
 }
 .nj-header-inner {
   max-width: 900px;
